@@ -1,0 +1,638 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex; /* Usando Flexbox no cabeçalho */
+  justify-content: space-between; /* Espalha os elementos entre as extremidades */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 10px 20px; /* Espaçamento no topo, na base e nas laterais do cabeçalho */
+ 
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column; /* Organiza os elementos em uma coluna */
+  align-items: center; /* Centraliza os elementos horizontalmente */
+  text-align: center;
+  gap: 20px; /* Espaçamento entre os elementos */
+}
+.header-icons {
+  display: flex;
+  gap: 15px; /* Espaçamento entre os ícones */
+  margin-bottom: 20px; /* Espaçamento entre os ícones e a logo */
+}
+
+.header-icons a i {
+  color: #FFF;
+}
+
+.header-icons a:hover i {
+  animation: translateY 0.8s infinite alternate;
+  color: #ff7d03;
+}
+
+@keyframes translateY {
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(-8px) scale(1.1);
+  }
+}
+
+
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 300px;
+  margin: 20px 0; /* Espaçamento acima e abaixo da logo */
+}
+
+.header-logo img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .header-content {
+    flex-direction: column; /* Alinha verticalmente os elementos em telas menores */
+    align-items: center; /* Centraliza os itens */
+    gap: 15px; 
+  }
+  
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+.bg-home {
+  position: relative;
+  overflow: hidden; /* Para esconder o conteúdo que ultrapassa */
+}
+
+.bg-home .video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+  overflow: hidden;
+}
+
+.bg-home .video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza o vídeo */
+}
+
+/* Você pode manter o resto do CSS existente */
+
+.hero {
+  color: #FFF;
+  min-height: 70vh; /* Reduz o espaço vertical */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Posiciona o conteúdo mais próximo do topo */
+  text-align: center;
+  padding: 20px 14px; /* Aumenta o padding superior */
+}
+
+.hero h1 {
+  max-width: 940px;
+  font-size: 46px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.hero h2 {
+  max-width: 800px;
+  font-size: 24px;
+  margin: 10px 0 20px;
+  line-height: 1.4;
+}
+
+.button-contact {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #FFF;
+  background-color: #ff7d03;
+  border-radius: 30px;
+}
+
+.button-contact:hover {
+  animation: scaleButton 0.8s alternate infinite;
+}
+
+@keyframes scaleButton {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .hero {
+    min-height: 60vh; /* Ajuste para telas menores */
+  }
+  .hero h1 {
+    font-size: 34px;
+    padding: 0 14px;
+    width: 100%;
+  }
+  .hero p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+}
+.about {
+  background-color: #00334E;
+  overflow: hidden;
+  color: #FFF;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+  padding: 34px 14px 64px 14px;
+}
+.about-content img {
+  max-width: 600px;
+}
+
+.about-content div {
+  flex: 1;
+}
+
+.about-description h2 {
+  font-size: 36px;
+  margin-bottom: 24px;
+  text-align: center;
+  justify-content: center;
+  color: #fff; /* Cor do texto para branco */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+.about-description p {
+  margin-bottom: 14px;
+  line-height: 150%;
+  color: #fff; /* Cor do texto para branco */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+@media screen and (max-width: 768px) {
+  .about-description {
+    flex-direction: column;
+  }
+}
+
+
+.services {
+  background-color: #FFF;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 54px 14px;
+}
+
+.services-content h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 14px;
+}
+
+.services-content p {
+  line-height: 150%;
+  margin-bottom: 14px;
+  text-align: center;
+  max-width: 780px;
+}
+
+
+
+.imgmarkts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1500px;
+  gap: 18px;
+  padding: 0 44px 34px 44px;
+}
+
+.imgmarkt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  border-radius: 15px;
+  box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Certifique-se de que o carrossel tenha altura suficiente */
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease; /* Transição suave para o slide */
+  width: 100%;
+}
+
+.carousel-images img {
+  width: 100%;  /* Faz a imagem ocupar 100% do carrossel */
+  height: 100%; /* Ajusta a altura para garantir que as imagens fiquem visíveis */
+  object-fit: cover; /* Ajusta a imagem para cobrir toda a área do carrossel */
+  flex-shrink: 0; /* Impede que as imagens encolham */
+}
+
+.carousel-images img:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+.imgmarkt:hover .carousel-images img {
+  transform: none; /* Evita o zoom no hover durante o carrossel */
+}
+
+.carousel-navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+}
+
+.carousel-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  border: none;
+  border-radius: 50%;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.imgmarkts-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  background-color: #FFF;
+  z-index: 99;
+  border-radius: 0 0 20px 20px;
+}
+
+.imgmarkts-info button {
+  color: #FFF;
+  background-color: #ff7d03;
+  padding: 6px 16px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+.imgmarkts-info button:hover {
+  background-color: #008afc;
+  transform: scale(1.1);
+}
+
+.imgmarkts-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  border-radius: 7px;
+  pointer-events: none;
+}
+
+.imgmarkt:hover .imgmarkts-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.imgmarkts-overlay p {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.imgmarkts-overlay button {
+  color: #FFF;
+  background-color: #ff7d03;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.imgmarkts-overlay button:hover {
+  background-color: #e56702;
+}
+
+@media screen and (max-width: 768px) {
+  .imgmarkts {
+    flex-direction: column;
+  }
+  .imgmarkt {
+    max-width: 740px;
+  }
+}
+
+.testimonials {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+  text-align: center;
+
+  .testimonials-content {
+      h2 {
+          font-size: 2rem;
+          margin-bottom: 20px;
+      }
+  }
+
+  .testimonial {
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+      margin: 20px 0;
+      text-align: center; 
+  }
+
+      .testimonial-photo {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          margin-bottom: 10px; 
+      }
+
+      .testimonial-text {
+          p {
+              font-style: italic;
+              font-size: 1rem;
+              margin: 0 0 5px; 
+          }
+
+          strong {
+              display: block;
+              font-weight: bold;
+          }
+      }
+  }
+
+  .contact-form {
+    background-color: #f8f9fa; /* Fundo claro para o formulário */
+    padding: 40px 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para o formulário */
+}
+
+  .container {
+    max-width: 600px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário na página */
+  }
+
+  h2 {
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+  }
+
+  .form-group {
+    margin-bottom: 15px; /* Espaçamento entre os campos */
+  }
+
+  label {
+    display: block; /* Faz o rótulo ocupar toda a largura */
+    margin-bottom: 5px; /* Espaçamento abaixo do rótulo */
+    font-weight: bold; /* Destaca o texto do rótulo */
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="tel"] {
+    width: 100%; /* Campo ocupa toda a largura */
+    padding: 10px; /* Espaçamento interno nos campos */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 8px; /* Bordas arredondadas nos campos */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+  }
+
+  button {
+    width: 100%; /* Botão ocupa toda a largura */
+    padding: 10px; /* Espaçamento interno no botão */
+    background-color: #ff7d03; /* Cor de fundo azul */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 30px; /* Bordas arredondadas no botão */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+  }
+
+button:hover {
+    background-color: #ff7d03; /* Cor do botão ao passar o mouse */
+}
+
+.trip-selection {
+  margin-bottom: 20px; /* Espaço abaixo da seleção de trajeto */
+}
+
+.trip-placeholder {
+  cursor: pointer; /* Muda o cursor para indicar que é interativo */
+  border: 1px solid #ff7d03; /* Borda da área de seleção */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 4px; /* Bordas arredondadas */
+  position: relative; /* Para posicionar a lista de opções */
+}
+
+.trip-options {
+  position: absolute; /* Para aparecer sobre a área de seleção */
+  background-color: white; /* Cor de fundo das opções */
+  border: 1px solid #ff7d03; /* Borda das opções */
+  border-radius: 4px; /* Bordas arredondadas */
+  z-index: 1; /* Para garantir que apareça acima de outros elementos */
+  width: 100%; /* Largura total da área de seleção */
+}
+
+.trip-options button {
+  display: block; /* Botões em bloco para ocupar a largura total */
+  padding: 10px; /* Espaçamento interno dos botões */
+  width: 100%; /* Largura total do botão */
+  border: none; /* Sem borda */
+  border-radius: 4px;
+  background-color: white; /* Cor de fundo padrão (branco) */
+  color: black; /* Cor do texto (preto) */
+  text-align: left; /* Texto alinhado à esquerda */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  transition: background-color 0.3s; /* Efeito de transição */
+}
+
+.trip-options button:hover {
+  background-color: #ff7d03; /* Cor do botão ao passar o mouse */
+  color: white; /* Cor do texto ao passar o mouse */
+}
+
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 54px 0;
+  gap: 24px;
+  color: #ccc;
+}
+
+.footer-logo {
+  max-width: 300px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 8px;
+  color: #FFF;
+}
+
+.footer-icons a i {
+  display: flex;
+  gap: 8px;
+  color: #ff7d03;
+}
+
+.footer-icons a:hover i {
+  animation: translateY 0.8s infinite alternate;
+  color: #ff7d03;
+}
+
+
+
+.btn-whatsapp {
+  position: fixed;
+  bottom: 14px;
+  right: 24px;
+  z-index: 99;
+}
+.btn-whatsapp img {
+  max-width: 74px;
+  transition: transform 0.4s;
+}
+.btn-whatsapp img:hover {
+  transform: scale(1.1);
+}
+
+.btn-whatsapp .tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  width: 120px;
+  top: 8px;
+  left: -144px;
+  padding: 6%;
+  border-radius: 8px;
+  text-align: center;
+  background-color: black;
+  color: #FFF;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-whatsapp:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .btn-whatsapp img {
+    max-width: 64px;
+  }
+}
+body {
+  font-family: "Sora", sans-serif;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.footer-logo{
+  max-width: 200px;
+}
+
+.footer-copy {
+  color: black;
+}
+
+
+
+button {
+  font-family: "Sora", sans-serif;
+  cursor: pointer;
+}
+
+svg {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */
